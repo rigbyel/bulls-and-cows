@@ -7,9 +7,8 @@
 using namespace std;
 
 class Host {
-public:
+private:
     vector<char> num;
-    int tries;
     int len;
     int base;
 
@@ -17,8 +16,7 @@ public:
     int handleInput(string input);
     bool checkNumber(vector<char>& digits);
 
-
-
+public:
     void newGame();
 };
 

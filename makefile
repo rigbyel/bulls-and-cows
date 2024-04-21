@@ -11,3 +11,4 @@ host.o: host.cpp
 
 clean:
 	rm -rf *.o
+	rm -rf main

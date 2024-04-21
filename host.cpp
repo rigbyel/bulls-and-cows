@@ -94,7 +94,6 @@ bool Host::checkNumber(vector<char>& digits) {
             if (digits[i] == num[j]) {
                 if (i == j) {
                     bulls++;
-                    cows++;
                     break;
                 } else {
                     cows++;

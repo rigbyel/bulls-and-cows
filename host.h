@@ -15,9 +15,10 @@ private:
     bool initNumber(int length, int uBase);
     int handleInput(string input);
     bool checkNumber(vector<char>& digits);
+    bool is_number(std::string& s);
 
 public:
-    void newGame();
+    int newGame();
 };
 
 #endif

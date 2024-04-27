@@ -3,7 +3,7 @@
 #include <set>
 #include <algorithm>
 
-bool is_number(std::string& s)
+bool Host::is_number(std::string& s)
 {
     std::string::const_iterator it = s.begin();
     while (it != s.end() && std::isdigit(*it)) ++it;
@@ -111,7 +111,7 @@ bool Host::checkNumber(vector<char>& digits) {
     return false;
 }
 
-void Host::newGame() {
+int Host::newGame() {
     std::cout << "Welcome to bulls and cows game!" << std::endl;
 
     int status = 3;
@@ -129,14 +129,21 @@ void Host::newGame() {
             status = 3;
         } 
         else {
-            std::cout << "Enter new number length to start a new game or enter 'exit' to stop programm." << std::endl;
+            std::cout << "Enter new number length to start a new game or enter 'help' for more commands" << std::endl;
             int uBase;
             string input;
             std::cin >> input; 
 
             if (input == "exit") {
-               status = 2;
-               continue;
+               return -1;
+            }
+            if (input == "mode") {
+                return 2;
+            }
+
+            if (input == "help") {
+                std::cout << "List of commands:\nexit - stop programm\nmode - change game mode\n" << std::endl;
+                continue;
             }
             if (!is_number(input)) {
                 std::cout << "You can only enter numbers or helper commands" << std::endl;
@@ -156,4 +163,6 @@ void Host::newGame() {
             };
         }
     } 
+
+    return 2;
 }

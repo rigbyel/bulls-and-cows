@@ -4,6 +4,9 @@
 #include <set>
 #include <string>
 
+#include <ncurses.h>  // add library
+
+using namespace std; // add this
 
 class Solver {
 private:
@@ -14,16 +17,22 @@ private:
     int cows;
     int ans;
     std::set<int> posNums;
-
+	
+	int global_status;
+	
+	int schet;
+	
     void delNums(int num);
     bool checkNum(int num, int ans, std::set<int>& filt);
     int guessNum();
-    int handleInput();
+    int handleInput(WINDOW *win);
     void initNums(int length);
     bool is_number(std::string& s);
 
 public:
     int newGame();
+	int newGame(int zeleboba);
+	int continue_game ();
 };
 
 #endif

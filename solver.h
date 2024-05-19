@@ -26,12 +26,15 @@ private:
     bool checkNum(int num, int ans, std::set<int>& filt);
     int guessNum();
     int handleInput(WINDOW *win);
-    void initNums(int length);
     bool is_number(std::string& s);
 
 public:
     int newGame();
 	int newGame(int zeleboba);
+
+    void initNums(int length);
+
+    int guessNum(int psbl);
 	int continue_game ();
 };
 

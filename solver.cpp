@@ -1,5 +1,7 @@
 #include "solver.h"
 #include <algorithm>
+#include <cstdlib> 
+#include <cmath>
 
 #include <iostream>
 
@@ -97,6 +99,30 @@ int Solver::guessNum() {
 
     auto it = posNums.cbegin(); 
     return *it;
+}
+
+int Solver::guessNum(int psbl) {
+    if (posNums.empty()) {
+    return -1;
+    } 
+
+    static bool first = true;
+    if (first) 
+    {  
+      srand( time(NULL) ); //seeding for the first time only!
+      first = false;
+    }
+    int mode = rand() % 100;
+
+    if (mode < psbl) {
+        auto it = posNums.cbegin(); 
+        return *it;
+    }
+
+    int max = int(pow(10, len+1)) - 1;
+    int min = int(pow(10, len));
+
+    return (min + rand() % (( max + 1 ) - min)) / 10;
 }
 
 int Solver::handleInput(WINDOW *win) {

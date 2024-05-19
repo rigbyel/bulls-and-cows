@@ -10,6 +10,8 @@ using namespace std; // add this
 
 class Solver {
 private:
+	int psbl;
+
     int tries;
     int len;
     int base;
@@ -29,12 +31,12 @@ private:
     bool is_number(std::string& s);
 
 public:
-    int newGame();
-	int newGame(int zeleboba);
+    int newGame(int psbl_);
+	int newGame(int zeleboba, int psbl_);
 
     void initNums(int length);
 
-    int guessNum(int psbl);
+    //int guessNum(int psbl);
 	int continue_game ();
 };
 

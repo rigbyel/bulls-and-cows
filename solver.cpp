@@ -92,6 +92,7 @@ void Solver::delNums(int num) {
     }
 }
 
+/*
 int Solver::guessNum() {
     if (posNums.empty()) {
     return -1;
@@ -100,8 +101,9 @@ int Solver::guessNum() {
     auto it = posNums.cbegin(); 
     return *it;
 }
+*/
 
-int Solver::guessNum(int psbl) {
+int Solver::guessNum() {
     if (posNums.empty()) {
     return -1;
     } 
@@ -160,8 +162,9 @@ int Solver::handleInput(WINDOW *win) {
     return 0;
 }
 
-int Solver::newGame() {
+int Solver::newGame(int psbl_) {
 	// echo();
+	psbl = psbl_;
 	clear();
 	refresh();
 	WINDOW *win_comp = newwin(5, 100, 2, 8);
@@ -298,8 +301,8 @@ int Solver::newGame() {
     return 10;
 }
 
-int Solver::newGame(int zeleboba) {
-	
+int Solver::newGame(int zeleboba, int psbl_) {
+	psbl = psbl_;
     int status = 1;
     int guess;       
 	std::string input;
